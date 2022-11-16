@@ -1,47 +1,47 @@
 ---
-title: Integrating CodeflowApp Bot
+title: Интеграция CodeflowApp Bot
 ---
 
 # {{ $frontmatter.title }}
 
-This page covers integrating CodeflowApp Bot into your GitHub repositories.
+На этой странице рассказывается об интеграции CodeflowApp Bot в ваши репозитории GitHub.
 
-## What is CodeflowApp Bot?
+## Что такое CodeflowApp Bot?
 
 <!--@include: ./parts/codeflowapp-bot.md-->
 
 ### Pull requests
-Once integrated, it will comment on every PR with a link to instantly run and review it:
+После интеграции он будет комментировать каждый PR со ссылкой для мгновенного запуска и просмотра:
 
 <img lang="en" src="./assets/codeflowapp-pr.jpg" alt="CodeflowApp bot in action" style="max-width: 550px"/>
 
-### Issues
+### Вопросы
 
-Whenever an issue is opened, CodeflowApp checks if a stackblitz.com bug reproduction URL is present in the comment text.
+При каждом открытии проблемы CodeflowApp проверяет, присутствует ли в тексте комментария URL-адрес воспроизведения ошибки с сайта stackblitz.com.
 
-If reproduction URL is present, CodeflowApp will comment with a "Fix this issue" button that allows you to start a new pull request with the bug reproduction mounted in a sibling folder next to your repo directory for live testing:
+Если URL воспроизведения присутствует, CodeflowApp прокомментирует его с помощью комментария "Исправьте эту проблему". кнопка, позволяющая начать новый запрос на исправление ошибки с ее воспроизведением в дочерней папке рядом с каталогом вашего репозитория для тестирования в реальном времени:
 
 <img lang="en" src="./assets/codeflowapp-issue.jpg" alt="CodeflowApp bot in action" style="max-width: 550px"/>
 
-## Installing the CodeflowApp Bot
+## Установка бота CodeflowApp
 
-To install the CodeflowApp bot on a repository, you will install it using GitHub UI.
+Чтобы установить бота CodeflowApp на репозиторий, вы установите его с помощью GitHub UI.
 
-1. Visit [CodeflowApp profile page](https://stackblitz.com/install-github-app)
-2. Select the account or organization, as well as the repositories you want the bot to have access to. 
-  -  If you choose “all in Organization”, CodeflowApp bot will be installed on all repositories in your organization.
-  - Please don't worry - if you change your mind, you can change the bot access or completely disable it!
+1. Посетите [страницу профиля CodeflowApp](https://stackblitz.com/install-github-app)
+2. Выберите учетную запись или организацию, а также репозитории, к которым вы хотите предоставить доступ боту. 
+  - Если вы выберете "all in Organization", бот CodeflowApp будет установлен на все репозитории в вашей организации.
+  - Пожалуйста, не волнуйтесь - если вы передумаете, вы можете изменить доступ к боту или полностью отключить его!
 
 <!--@include: ./parts/installing-codeflowapp.md-->
 
-## Disabling CodeflowApp Bot
+## Отключение бота CodeflowApp
 
-Once installed, the bot will be enabled by default on the repository and will be triggered whenever there is a new PR or an issue.
+После установки бот будет включен по умолчанию в хранилище и будет срабатывать всякий раз, когда появится новый PR или проблема.
 
-To disable the bot:
+Чтобы отключить бота:
 
-1. Create `.stackblitz` folder in the root directory of the project.
-2. Inside this folder, create a file called `codeflow.json`, specifying which actions you want disabled:
+1. Создайте папку `.stackblitz` в корневом каталоге проекта.
+2. Внутри этой папки создайте файл `codeflow.json`, указав, какие действия вы хотите отключить:
 
 ```json
 // .stackblitz/codeflow.json
@@ -58,23 +58,23 @@ To disable the bot:
 }
 ```
 
-Alternatively, you can also pause or uninstall the bot [through the GitHub UI](https://docs.github.com/en/developers/apps/managing-github-apps/deleting-a-github-app).
+Кроме того, вы можете приостановить или удалить бота [через пользовательский интерфейс GitHub](https://docs.github.com/en/developers/apps/managing-github-apps/deleting-a-github-app).
 
 
-## Enabling package overrides for issue reproductions
+## Включение переопределения пакетов для воспроизведения проблем
 
-Codeflow allows users to specify which packages they want to override in `package.json` and where the packages are located. A pnpm override is what is going to be installed when you run pnpm i instead of what is defined in a package.json file.
+Codeflow позволяет пользователям указывать, какие пакеты они хотят переопределить в `package.json` и где эти пакеты расположены. Переопределение pnpm - это то, что будет установлено при запуске pnpm i вместо того, что определено в файле package.json.
 
 :::info pnpm override
-A [pnpm override](https://pnpm.io/package_json#pnpmoverrides) "instructs pnpm to override a dependency in the dependency graph. This is useful to enforce all your packages to use a single version of a dependency, backport a fix, or replace a dependency with a fork."
+[pnpm override](https://pnpm.io/package_json#pnpmoverrides) "инструктирует pnpm отменить зависимость в графе зависимостей. Это полезно для того, чтобы заставить все ваши пакеты использовать одну версию зависимости, сделать бэкпорт исправления или заменить зависимость форком."
 :::
 
-### pnpm override use case scenario
+### сценарий использования pnpm override
 
-For example, an issue is submitted to Vite with a StackBlitz reproduction.
-1. A maintainer opens the issue in Codeflow IDE. Codeflow IDE pulls the reproduction that is defined in the issue, puts it in a reproduction folder, and
-reads the `codeflow.json` file. 
-2. If that file defines an override, Codeflow adds them to the repro’s `package.json` file. So, for example, instead of pulling Vite from npm, it will link the local vite project into that reproduction instead.
+Например, в Vite поступает выпуск с репродукцией StackBlitz.
+1. Мейнтейнер открывает проблему в Codeflow IDE. Codeflow IDE извлекает воспроизведение, определенное в выпуске, помещает его в папку воспроизведения, и
+считывает файл `codeflow.json`. 
+2. Если в этом файле определены переопределения, Codeflow добавляет их в файл `package.json`. Так, например, вместо извлечения Vite из npm, он свяжет локальный проект vite с этим воспроизведением.
 3. The maintainer can then run `pnpm i` in the repro and pnpm will install the dependencies defined in the override.
 
 :::info TL;DR
