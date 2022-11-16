@@ -57,38 +57,38 @@ Codeflow IDE должна иметь возможность открыть лю�
 
 В Web Publisher можно открыть файл любого типа.
 
-### Which package managers do you support?
+### Какие менеджеры пакетов вы поддерживаете?
 
 <!--@include: ./parts/supported-packages.md-->
 
-### Which runtime does Codeflow support?
+### Какую среду выполнения поддерживает Codeflow?
 
-Codeflow runs on top of [WebContainers](/guides/user-guide/available-environments#webcontainers), which currently support **Node.js 16**.
+Codeflow работает поверх [WebContainers](/guides/user-guide/available-environments#webcontainers), которые в настоящее время поддерживают **Node.js 16**.
 
-### Does any company use Codeflow IDE for their daily development work?
+### Использует ли какая-нибудь компания IDE Codeflow для ежедневной разработки?
 
-At StackBlitz, we do! We use Codeflow IDE for our internal dev work, including PR reviews. In fact, this docs page has been built in Codeflow IDE.
+В StackBlitz мы делаем это! Мы используем Codeflow IDE для нашей внутренней разработки, включая PR-обзоры. На самом деле, эта страница документации была создана в Codeflow IDE.
 
-It's a new product that has **just** been released so check back here in a few months.
+Это новый продукт, который **только что** был выпущен, так что загляните сюда через несколько месяцев.
 
-## Security 
+## Безопасность 
 
-### I would like to use Codeflow but I'm not sure if it's secure.
+### Я хотел бы использовать Codeflow, но не уверен в его безопасности.
 
-Since we’re executing the code entirely in the browser's sandbox, Codeflow IDE is actually more secure than running locally. We also use expiring oAuth tokens for interactions with git.
+Поскольку мы выполняем код полностью в "песочнице" браузера, Codeflow IDE на самом деле более безопасна, чем локальный запуск. Мы также используем токены oAuth с истекающим сроком действия для взаимодействия с git.
 
-## Pricing and access
+## Ценообразование и доступ
 
-### Is Codeflow free?
+### Является ли Codeflow бесплатным?
 
-Codeflow IDE is free for Open Source projects and for public repositories and will remain this way forever. This includes private repositories. Please reach out to [devrel@stackblitz.com](mailto:devrel@stackblitz.com) and we’ll get your organization hooked up with free private repos!
+Codeflow IDE бесплатна для проектов с открытым исходным кодом и для публичных репозиториев и останется такой навсегда. Это касается и частных хранилищ. Пожалуйста, свяжитесь с [devrel@stackblitz.com](mailto:devrel@stackblitz.com) и мы поможем вашей организации подключиться к бесплатным частным репозиториям!
 
-If your company is interested in using Codeflow, reach out to our [Enterprise Team](https://stackblitz.com/beta-teams-signup).
+Если ваша компания заинтересована в использовании Codeflow, свяжитесь с нашей [Enterprise Team](https://stackblitz.com/beta-teams-signup).
 
-### Do I have to be signed in to use Codeflow IDE? 
+### Должен ли я быть зарегистрирован для использования Codeflow IDE? 
 
-Yes, only during the beta. Starting Q1 2023, you'll be able to open public repos without being logged in.
+Да, только во время бета-тестирования. Начиная с 1 квартала 2023 года, вы сможете открывать публичные репозитории без входа в систему.
 
-### To open a repo in Codeflow IDE, do I need to be signed in both on StackBlitz and GitHub? Or only one of them?
+### Чтобы открыть репо в Codeflow IDE, нужно ли мне быть зарегистрированным и на StackBlitz, и на GitHub? Или только один из них?
 
-You need to sign in to [StackBlitz](https://stackblitz.com) *using* GitHub.
+Вам нужно войти в [StackBlitz](https://stackblitz.com) *используя* GitHub.
