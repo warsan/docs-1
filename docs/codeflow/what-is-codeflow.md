@@ -20,57 +20,57 @@ StackBlitz теперь помогает плавно переключаться
 
 
 ## Основные характеристики
-- 🔒 **unmatched security**: all development is happening in your browser tab, including running Node.js, git, package managers (npm, yarn, pnpm), and local extensions.
-- ⚡️ **shockingly fast**: the entire dev environment spins up in milliseconds - even reinstalling `node_modules` is as simple as refreshing the page, with pnpm running up to four times as fast as locally!
-- 💻 **works online and offline**: continue your work even when you lose the Internet connection midway.
-- 🔥 **your environment is always online**: your apps never go to sleep and have no bandwidth limits - share the URL with as many friends, colleagues, and communities as you’d like!
-- 🆓 **always free for Open Source**: you're the future of the web development and we love you.
+- 🔒 **непревзойденная безопасность**: вся разработка происходит во вкладке браузера, включая запуск Node.js, git, менеджеров пакетов (npm, yarn, pnpm) и локальных расширений.
+- ⚡️ **шокирующе быстро**: Вся среда разработки запускается за миллисекунды - даже переустановка `node_modules` происходит так же просто, как обновление страницы, при этом pnpm работает в четыре раза быстрее, чем локально!
+- 💻 **работает онлайн и офлайн**: продолжайте работу даже при потере Интернет-соединения на полпути.
+- 🔥 **Ваше окружение всегда онлайн**: Ваши приложения никогда не засыпают и не имеют ограничений по пропускной способности - поделитесь URL-адресом с любым количеством друзей, коллег и сообществ!
+- 🆓 **всегда бесплатно для Open Source**: вы - будущее веб-разработки, и мы вас любим.
 
-## Explore
+## Посетите сайт
 
-Excited to try it yourself? Try these:
-- 📝 Take Web Publisher for a spin by adding your name to [ilovecodeflow.com](https://ilovecodeflow.com/)!
-- 💻 Explore how we built [this docs site](https://pr.new/github.com/stackblitz/docs) in Codeflow IDE!
-- 🕵️ Review [this suspicious PR](https://pr.new/stackblitz/docs/pull/40) in Codeflow IDE
-- 🤖 See our CodeflowApp bot in action on [a PR](https://github.com/stackblitz/docs/pull/40#issue-1404169268)!
+Хотите попробовать сами? Попробуйте это:
+- 📝 Попробуйте Web Publisher, добавив свое имя на [ilovecodeflow.com](https://ilovecodeflow.com/)!
+- 💻 Изучите, как мы создали [этот сайт документации](https://pr.new/github.com/stackblitz/docs) в Codeflow IDE!
+- 🕵️ Обзор [этого подозрительного PR](https://pr.new/stackblitz/docs/pull/40) в IDE Codeflow
+- 🤖 Посмотрите на нашего бота CodeflowApp в действии на [a PR](https://github.com/stackblitz/docs/pull/40#issue-1404169268)!
 
-## Learn
+## Узнать
 
-Understand the Codeflow better! Read about:
-- Working in [Codeflow IDE](./working-in-codeflow-ide).
-- Updating content [with Web Publisher](./content-updates-with-web-publisher).
-- Using the short URL [pr.new](./using-pr-new).
-- Getting help from [CodeflowApp bot](./integrating-codeflowapp-bot).
+Лучше понимайте поток кода! Читайте о:
+- Работа в [Codeflow IDE](./working-in-codeflow-ide).
+- Обновление содержимого [с помощью Web Publisher](./content-updates-with-web-publisher).
+- Использование короткого URL [pr.new](./using-pr-new).
+- Получение помощи от [CodeflowApp bot](./integrating-codeflowapp-bot).
 
-You can also check our **[Frequently Asked Questions page](./codeflow-faq)**.
+Вы также можете проверить нашу страницу **[Часто задаваемые вопросы](./codeflow-faq)**.
 
-## Add Codeflow to your project
+## Добавьте Codeflow в свой проект
 
-Follow these handy integration guides to link your project to Codeflow within minutes:
-- 💻 [Using pr.new](./using-pr-new) integration guide
-- 📝 [Web Publisher](./integrating-web-publisher) integration guide
-- 🤖 [CodeflowApp bot](./integrating-codeflowapp-bot) integration guide
+Следуйте этим удобным руководствам по интеграции, чтобы связать свой проект с Codeflow в течение нескольких минут:
+- 💻 [Использование pr.new](./using-pr-new) руководство по интеграции
+- 📝 [Web Publisher](./integrating-web-publisher) руководство по интеграции
+- 🤖 [CodeflowApp bot](./integrating-codeflowapp-bot) руководство по интеграции
 
-## Feedback? Ideas? Dreams?
+## Обратная связь? Идеи? Мечты?
 
-Let us know what you think:
-- **Ask questions** on [GitHub Discussions](https://github.com/stackblitz/docs/discussions/new?category=Q-A).
-- **Request a new docs page** or a more thorough explanation using our [GitHub Discussions](https://github.com/stackblitz/docs/discussions/new?category=ideas)!
+Дайте нам знать, что вы думаете:
+- **Задавайте вопросы** на [GitHub Discussions](https://github.com/stackblitz/docs/discussions/new?category=Q-A).
+- **Запросите новую страницу документации** или более подробное объяснение, используя наш [GitHub Discussions](https://github.com/stackblitz/docs/discussions/new?category=ideas)!
 
 
-## What about other online IDEs?
+## А как насчет других онлайновых IDE?
 
-Unlike StackBlitz, legacy online IDEs run on remote servers and stream the results back to your browser. This approach yields **few security benefits** and **provides a worse experience** than your local machine in nearly every way.
+В отличие от StackBlitz, традиционные онлайновые IDE работают на удаленных серверах и передают результаты в ваш браузер. Такой подход дает **мало преимуществ в плане безопасности** и **предоставляет худшие возможности**, чем ваша локальная машина почти во всех отношениях.
 
-**StackBlitz solves these problems by doing all computing inside your browser**. This leverages decades of speed and security innovations but also **unlocks key development and debugging benefits**.
+**StackBlitz решает эти проблемы, выполняя все вычисления внутри вашего браузера**. Это позволяет использовать десятилетия инноваций в области скорости и безопасности, а также **открывает ключевые преимущества разработки и отладки**.
 
-Lastly, StackBlitz is capable of running Node.js inside the browser so you can use the web to build the web.
+Наконец, StackBlitz способен запускать Node.js внутри браузера, так что вы можете использовать веб для создания веба.
 
-## Get involved
+## Принять участие
 
-**We love our community!** Please do stay in touch and:
+**Мы любим наше сообщество!** Пожалуйста, оставайтесь на связи и..:
 
-- Join our supportive community on [the Discord server](https://discord.gg/22zTzrwQrU)!
-- Read our [blog](https://blog.stackblitz.com/) and see what we have been up to in our [monthly update posts](https://blog.stackblitz.com/categories/monthly-updates/)!
-- Share how you use Codeflow on [Twitter](https://twitter.com/stackblitz)!
-- Reach out to our Developer Advocate on [Twitter](https://twitter.com/sylwiavargas) or via [an email](mailto:devrel@stackblitz.com) with your Codeflow ideas, dreams, and wishes!
+- Присоединяйтесь к нашему сообществу на [сервере Discord](https://discord.gg/22zTzrwQrU)!
+- Читайте наш [блог](https://blog.stackblitz.com/) и узнайте, чем мы занимались в наших [ежемесячных обновленных постах](https://blog.stackblitz.com/categories/monthly-updates/)!
+- Поделитесь тем, как вы используете Codeflow на [Twitter](https://twitter.com/stackblitz)!
+- Свяжитесь с нашим защитником разработчиков в [Twitter](https://twitter.com/sylwiavargas) или по [электронной почте](mailto:devrel@stackblitz.com) со своими идеями, мечтами и пожеланиями Codeflow!
