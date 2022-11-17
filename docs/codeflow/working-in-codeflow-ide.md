@@ -1,14 +1,14 @@
 ---
-title: Working in Codeflow IDE
+title: Работа в IDE Codeflow
 ---
 
 # {{ $frontmatter.title }}
 
-Are you ready to **make Codeflow your workflow?** 🔥 
+Готовы ли вы **сделать Codeflow своим рабочим процессом?**. 🔥 
 
-This page covers what to expect when using Codeflow IDE.
+На этой странице рассказывается о том, чего следует ожидать при работе с Codeflow IDE.
 
-## What is Codeflow IDE?
+## Что такое Codeflow IDE?
 
 <!-- @include: ./parts/codeflow-ide.md -->
 
