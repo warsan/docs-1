@@ -36,10 +36,6 @@ title: Работа в IDE Codeflow
 
 <img lang="en" src="./assets/codeflow-ide-white-dots-cut.png" alt="CodeflowApp bot in action" style="width: 400px"/>
 
-<img src="./assets/Opening_a_Github_Project.png" alt="jj" style="width: 400px"/>
-
-![Открытие визуальной схемы проекта GitHub](./assets/Opening_a_Github_Project.png)
-
 Более того, вы также увидите точку на вкладке браузера, чтобы напомнить вам о несохраненных изменениях.
 
 :::warning
