@@ -1,6 +1,6 @@
 ---
-title: Available environments
-description: "There are two kinds of environments that run projects in StackBlitz: EngineBlock and WebContainers. Each project in StackBlitz is tied to one or the other."
+title: Доступные среды
+description: "Существует два вида сред, в которых выполняются проекты в StackBlitz: EngineBlock и WebContainers. Каждый проект в StackBlitz связан с тем или иным проектом."
 ---
 
 <script setup lang="ts">
@@ -9,9 +9,9 @@ description: "There are two kinds of environments that run projects in StackBlit
 
 # {{ $frontmatter.title }}
 
-There are two kinds of environments that run projects in StackBlitz: **EngineBlock** and **WebContainers**. Each project in StackBlitz is tied to one or the other.
+Существует два вида сред, в которых выполняются проекты в StackBlitz: **EngineBlock** и **WebContainers**. Каждый проект в StackBlitz связан с тем или иным проектом.
 
-Depending on the environment, StackBlitz IDE includes slightly different features and User Interface elements. See an overview of both environments in the table below - or you can directly consult the section on [EngineBlock](#engineblock) or [WebContainers](#webcontainers).
+В зависимости от среды, StackBlitz IDE включает немного разные функции и элементы пользовательского интерфейса. Обзор обеих сред приведен в таблице ниже - или вы можете напрямую обратиться к разделу [EngineBlock](#engineblock) или [WebContainers](#webcontainers).
 
 | Feature | EngineBlock | WebContainers |
 | --- | --- | --- |
@@ -25,29 +25,29 @@ Depending on the environment, StackBlitz IDE includes slightly different feature
 | [Console](/guides/user-guide/ide-whats-on-your-screen#console) | <SupportIcon value="yes" label="Available" /> | <SupportIcon value="no" label="Not available" /> |
 | [Terminal](/guides/user-guide/ide-whats-on-your-screen#terminal) | <SupportIcon value="no" label="Not available" /> | <SupportIcon value="yes" label="Available" /> |
 
-To explore these differences in practice, we took a React project and turned it into:
+Чтобы изучить эти различия на практике, мы взяли проект React и превратили его в:
 
-- [a React project running on EngineBlock](https://stackblitz.com/fork/react)
-- [a React project running on WebContainers](https://vite.new/react) (powered by Vite)
+- [проект React, работающий на EngineBlock](https://stackblitz.com/fork/react)
+- [проект React, работающий на WebContainers](https://vite.new/react) (powered by Vite)
 
-### EngineBlock
+### Моторный блок
 
-EngineBlock is a custom runtime environment based on [SystemJS](https://github.com/systemjs/systemjs#systemjs), capable of running popular front-end frameworks and libraries. Depending on whether you want others to interact with the codebase or the app, you can choose to share the link to the editor or the app preview.
+EngineBlock - это пользовательская среда выполнения на основе [SystemJS](https://github.com/systemjs/systemjs#systemjs), способная запускать популярные front-end фреймворки и библиотеки. В зависимости от того, хотите ли вы, чтобы другие взаимодействовали с кодовой базой или приложением, вы можете выбрать, поделиться ссылкой на редактор или предварительный просмотр приложения.
 
-Please note that this environment is running a custom build process and is not compatible with Node.js.
+Обратите внимание, что эта среда запускает пользовательский процесс сборки и не совместима с Node.js.
 
-The EngineBlock runtime works with every major browser engine.
+Время выполнения EngineBlock работает со всеми основными браузерными движками.
 
 ### WebContainers
 
-> 💡 [Read the recent WebContainers announcement](https://blog.stackblitz.com/posts/webcontainers-are-now-supported-on-firefox/)
+> 💡 [Читайте недавний анонс WebContainers] (https://blog.stackblitz.com/posts/webcontainers-are-now-supported-on-firefox/)
 
-As a runtime focused on providing a native Node.js environment, WebContainers are capable of running Node.js toolchains, including Webpack or Vite. Using one of these tools, you can work with any front-end framework just like you would in your local environment. WebContainers, however, also support various back-end frameworks, as well as other tools ([including `sqlite3`](https://blog.stackblitz.com/posts/introducing-sqlite3-webcontainers-support/)!).
+Будучи средой исполнения, ориентированной на создание собственной среды Node.js, WebContainers способны запускать инструментальные цепочки Node.js, включая Webpack или Vite. Используя один из этих инструментов, вы можете работать с любым front-end фреймворком так же, как и в локальной среде. WebContainers, однако, также поддерживают различные back-end фреймворки, а также другие инструменты ([включая `sqlite3`](https://blog.stackblitz.com/posts/introducing-sqlite3-webcontainers-support/)!).
 
-As for the sharing options, you can share only the editor link as the preview requires running editor. The preview is visible in the editor's window.
+Что касается вариантов совместного использования, вы можете поделиться только ссылкой на редактор, поскольку для предварительного просмотра требуется запущенный редактор. Предварительный просмотр виден в окне редактора.
 
-This environment has a terminal that supports various common commands you would run locally.
+В этой среде есть терминал, который поддерживает различные обычные команды, которые можно выполнить локально.
 
-WebContainers are currently supported by Chromium-based browsers and [in Firefox, with some caveats](/platform/webcontainers/browser-support).
+В настоящее время WebContainers поддерживаются браузерами на базе Chromium и [в Firefox, с некоторыми оговорками](/platform/webcontainers/browser-support).
 
-Our [Codeflow IDE](/codeflow/what-is-codeflow) runs on the WebContainers runtime.
+Наша [Codeflow IDE](/codeflow/what-is-codeflow) работает на среде исполнения WebContainers.
