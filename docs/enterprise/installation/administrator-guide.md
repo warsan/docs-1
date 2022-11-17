@@ -1,18 +1,18 @@
 ---
-title: Administrator Guide
+title: Руководство администратора
 ---
 
 # {{ $frontmatter.title }}
 
 :::info
-This document covers in-depth custom installation and cluster operations. For a more gentle introduction to the installation process, please check out the [Quickstart](/enterprise/installation/quickstart).
+В этом документе подробно рассматривается пользовательская установка и работа с кластером. Для более мягкого введения в процесс установки, пожалуйста, ознакомьтесь с [Quickstart](/enterprise/installation/quickstart).
 :::
 
-StackBlitz Enterprise is a Kubernetes application. You can install the software on an existing cluster or use our installer that has an embedded, production-ready Kubernetes distribution packaged with it.
+StackBlitz Enterprise - это приложение Kubernetes. Вы можете установить программное обеспечение на существующий кластер или воспользоваться нашей программой установки, в которую встроен готовый к производству дистрибутив Kubernetes.
 
-## Embedded Kubernetes Installation
+## Установка встроенного Kubernetes
 
-If you don’t have a cluster, then our install scripts can provide one. The minimum requirements for this is 16 vCPUs, 32 GB memory, and 200 GB storage running Ubuntu LTS.
+Нет данных (истекло время ожидания отправки данных).
 
 ```sh
 curl -sSL https://k8s.kurl.sh/stackblitz | sudo bash
