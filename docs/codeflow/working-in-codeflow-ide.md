@@ -12,11 +12,11 @@ title: Работа в IDE Codeflow
 
 <!-- @include: ./parts/codeflow-ide.md -->
 
-It is designed for enabling you to quickly spin up the entire environment without the hassle of cloning and installing dependencies.
+Он предназначен для быстрого запуска всей среды без необходимости клонирования и установки зависимостей.
 
-:::tip Fun fact
+:::tip Забавный факт
 
-At StackBlitz, we have been using Codeflow IDE in our daily internal development, including PR reviews. This docs site was also built on Codeflow IDE and Web Publisher!
+В StackBlitz мы используем IDE Codeflow в ежедневной внутренней разработке, включая PR-обзоры. Этот сайт документации также был создан на базе Codeflow IDE и Web Publisher!
 
 :::
 
@@ -34,8 +34,9 @@ At StackBlitz, we have been using Codeflow IDE in our daily internal development
 
 Когда файл изменяется, вы увидите белую точку рядом с его вкладкой в редакторе. 
 
+<img lang="en" src="./assets/codeflow-ide-white-dots-cut.png" alt="CodeflowApp bot in action" style="width: 400px"/>  
 
-<img lang="en" src="./assets/codeflow-ide-white-dots-cut.png" alt="CodeflowApp bot in action" style="width: 400px"/>
+<img src="./assets/codeflowapp-issue.jpg" alt="" style="width: 400px"/>
 
 Более того, вы также увидите точку на вкладке браузера, чтобы напомнить вам о несохраненных изменениях.
 
