@@ -12,7 +12,7 @@ title: Codeflow FAQ
 
 ### Что такое Codeflow?
 
-<!--@include: ./parts/codeflow.md--> Codeflow состоит из четырех инструментов: 
+<!--@include: ./parts/codeflow.md--> Codeflow состоит из четырёх инструментов: 
 - Codeflow IDE, 
 - Web Publisher для редактирования содержимого, 
 - Бот CodeflowApp для решения вопросов и PR, а также 
