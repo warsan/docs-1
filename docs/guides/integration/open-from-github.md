@@ -32,6 +32,8 @@ title: Запуск проектов с GitHub
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/___YOUR_PATH___)
 ```
 
+результат: [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/warsan/docs-1)
+
 Если вы хотите отобразить кнопку в **HTML-разметке**, используйте следующий код:
 
 ```html
@@ -130,7 +132,7 @@ https://stackblitz.com/github/vercel/next.js/tree/canary/examples/hello-world?ti
   }
   ```
 
-## Tips & best practices
+## Советы и лучшие практики
 
 ### Сохраните файл `package-lock.json`
 
