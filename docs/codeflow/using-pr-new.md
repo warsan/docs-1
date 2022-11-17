@@ -1,52 +1,52 @@
 ---
-title: Using pr.new
+title: Использование pr.new
 ---
 
 # {{ $frontmatter.title }}
 
-Open Source contributions have never been easier 🥰 
+Вклады в открытый исходный код еще никогда не были такими простыми 🥰 
 
-This page covers using pr.new to open, view, and contribute to any project through our Codeflow IDE or Web Publisher.
+Эта страница посвящена использованию pr.new для открытия, просмотра и внесения вклада в любой проект через нашу IDE Codeflow или Web Publisher.
 
-## What is pr.new?
+## Что такое pr.new?
 
 <!--@include: ./parts/pr-new.md-->
 
-## How does pr.new work?
+## Как работает pr.new?
 
-This short URL enables magical experiences by choosing just the right tools for the job.
+Этот короткий URL позволяет получить волшебные впечатления, выбирая именно те инструменты, которые нужны для работы.
 
-Below you will learn what to expect in different scenarios.
+Ниже вы узнаете, чего следует ожидать в различных сценариях.
 
 <!-- TODO: graph -->
 
-### Opening a GitHub repository
+### Открытие репозитория GitHub
 
-To open a GitHub repository with pr.new, visit it on GitHub and in the browser's address tab, add `pr.new` to the beginning of the URL, for example:
+Чтобы открыть репозиторий GitHub с помощью pr.new, посетите его на GitHub и в адресной вкладке браузера добавьте `pr.new` в начало URL, например:
 
 > <a href="https://pr.new/github.com/stackblitz/docs" target="_blank" rel="noopener noreferrer"><b>pr.new/</b>github.com/stackblitz/docs</a>
 
-You will be redirected to [Codeflow IDE](./working-in-codeflow-ide) where you can work to [submit a PR](./working-in-codeflow-ide#submitting-a-pr) or just explore the codebase.
+Вы будете перенаправлены в [Codeflow IDE](./working-in-codeflow-ide), где вы можете работать над [submit a PR](./working-in-codeflow-ide#submitting-a-pr) или просто изучить кодовую базу.
 
-### Opening a specific branch 
+### Открытие конкретного филиала 
 
-To inspect a branch with pr.new, visit it on GitHub and in the browser's address tab, add `pr.new` to the beginning of the URL, for example:
+Чтобы проверить ветку с pr.new, посетите ее на GitHub и в адресной вкладке браузера добавьте `pr.new` в начало URL, например:
 
 > <b>pr.new/</b>github.com/stackblitz/docs/tree/BRANCH-NAME
 
-You will be redirected to [Codeflow IDE](./working-in-codeflow-ide) where you can explore the code, continue the work, or investigate the issue.
+Вы будете перенаправлены в [Codeflow IDE](./working-in-codeflow-ide), где вы можете изучить код, продолжить работу или исследовать проблему.
 
-### Reviewing a PR
+### Обзор PR
 
-To review a PR with pr.new, visit the submitted pull request on GitHub and in the browser's address tab, add `pr.new` to the beginning of the URL, for example:
+Чтобы просмотреть PR с pr.new, посетите поданный pull request на GitHub и в адресной вкладке браузера добавьте `pr.new` в начало URL, например:
 
 > <a href="https://pr.new/github.com/stackblitz/docs/pull/33" target="_blank" rel="noopener noreferrer"><b>pr.new/</b>github.com/stackblitz/docs/pull/33</a>
 
-You will be redirected to [Codeflow IDE](./working-in-codeflow-ide) in the ["PR review mode"](./working-in-codeflow-ide#reviewing-a-pr-with-codeflow-ide) where you will see diffs. You can switch to the standard file view by choosing the "file" icon in the left vertical nav bar.
+Вы будете перенаправлены в [Codeflow IDE](./working-in-codeflow-ide) в режиме ["PR review mode"](./working-in-codeflow-ide#reviewing-a-pr-with-codeflow-ide), где вы увидите различия. Вы можете переключиться на стандартный вид файла, выбрав "файл" значок в левой вертикальной навигационной панели.
 
-## "Open in Codeflow" button
+## "Открыто в Codeflow" кнопка
 
-To help your users quickly spin up the entire environment with your project, you can add a CTA (call-to-action) button on your website or in the README file with any of the above pr.new links. 
+Чтобы помочь пользователям быстро запустить всю среду с вашим проектом, вы можете добавить кнопку CTA (call-to-action) на свой сайт или в файл README с любой из вышеуказанных ссылок pr.new. 
 
 | Button preview | Direct URL |
 | --- | --- |
@@ -54,16 +54,16 @@ To help your users quickly spin up the entire environment with your project, you
 | <img alt="Open in Codeflow" src="/img/open_in_codeflow_small.svg" /> | <a href="/img/open_in_codeflow_small.svg" target="_blank">open_in_codeflow_small.svg</a> |
 
 ::: tip
-You can either host the images on your servers or directly use our image URLs.
+Вы можете разместить изображения на своих серверах или напрямую использовать наши URL-адреса изображений.
 :::
 
-In order to display the button in a **Markdown file**, use the following code - remember to update the last URL with the project repository path:
+Чтобы отобразить кнопку в **Markdown файле**, используйте следующий код - не забудьте обновить последний URL на путь к репозиторию проекта:
 
 ```md
 [![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/___GH_ACCOUNT__/___GH_REPOSITORY___)
 ```
 
-Or, in HTML:
+Или в HTML:
 
 ```html
 <a href="https:///pr.new/___GH_ACCOUNT__/___GH_REPOSITORY___">
@@ -74,12 +74,12 @@ Or, in HTML:
 </a>
 ```
 
-If the user is logged in at GitHub and StackBlitz (in beta), Codeflow IDE will open up. No further configuration is needed. 
+Если пользователь вошел в GitHub и StackBlitz (в бета-версии), откроется IDE Codeflow. Никакой дополнительной настройки не требуется. 
 
-## Opening a single file
+## Открытие одного файла
 
-To edit a single file with pr.new, visit it in the GitHub repository and click the "Edit" icon (a pencil). Now, in the browser's address tab, add `pr.new` to the beginning of the URL, for example:
+Чтобы отредактировать отдельный файл с помощью pr.new, посетите его в репозитории GitHub и нажмите кнопку "Редактировать". значок (карандаш). Теперь в адресной вкладке браузера добавьте `pr.new` в начало URL, например:
 
 > <a href="https://pr.new/github.com/stackblitz/docs/edit/main/docs/guides/user-guide/what-is-stackblitz.md" target="_blank" rel="noopener noreferrer"><b>pr.new/</b>github.com/stackblitz/docs/edit/main/docs/guides/user-guide/what-is-stackblitz.md</a>
 
-You will be redirected to [Web Publisher](./content-updates-with-web-publisher) for a more pleasant editing experience. If you prefer to work in a full environment, click on the "Open in IDE" button and you will be redirected to [Codeflow IDE](./working-in-codeflow-ide).
+Вы будете перенаправлены на [Web Publisher](./content-updates-with-web-publisher) для более приятного редактирования. Если вы предпочитаете работать в полной среде, нажмите на "Открыть в IDE". и вы будете перенаправлены на [Codeflow IDE](./working-in-codeflow-ide).
