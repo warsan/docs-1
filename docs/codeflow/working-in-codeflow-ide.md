@@ -34,9 +34,9 @@ title: Работа в IDE Codeflow
 
 Когда файл изменяется, вы увидите белую точку рядом с его вкладкой в редакторе. 
 
-<img lang="en" src="./assets/codeflow-ide-white-dots-cut.png" alt="CodeflowApp bot in action" style="width: 400px"/>  
+<img lang="en" src="./assets/codeflow-ide-white-dots-cut.png" alt="CodeflowApp bot in action" style="width: 400px"/>
 
-<img src="./assets/codeflowapp-issue.jpg" alt="" style="width: 400px"/>
+<img src="./assets/codeflow-ide-white-dots-cut.png" alt="" style="width: 400px"/>
 
 Более того, вы также увидите точку на вкладке браузера, чтобы напомнить вам о несохраненных изменениях.
 
