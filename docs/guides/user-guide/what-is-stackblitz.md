@@ -17,23 +17,23 @@ StackBlitz безопасен, доступен для совместного и
 
 ### Основные характеристики:
 
-- **unmatched security**: all development is happening in your browser tab, including running Node.js and git
-- **surprisingly fast**: the entire dev environment spins up in miliseconds - even reinstalling `node_modules` is as simple as refreshing the page
-- **works online and offline**: continue your work even when you lose the Internet connection midway
-- **your apps are always online**: your apps never go to sleep and have no bandwidth limits - share the URL with as many friends, colleagues, and communities as you’d like!
-- **seamless debugging** with Chrome Dev Tools for both front- and backend apps!
+- ** непревзойдённая безопасность**: вся разработка происходит во вкладке браузера, включая запуск Node.js и git
+- **удивительно быстро**: вся среда разработки загружается за миллисекунды - даже переустановка `node_modules` так же проста, как обновление страницы
+- **работает онлайн и офлайн**: продолжать работу, даже если вы потеряли соединение с Интернетом на полпути
+- **Ваши приложения всегда онлайн**: Ваши приложения никогда не засыпают и не имеют ограничений по пропускной способности - поделитесь URL-адресом с любым количеством друзей, коллег и сообществ!
+- **бесшовная отладка** с помощью Chrome Dev Tools как для внешних, так и для внутренних приложений!
 
 ![Preview & debug](./assets/what-is-sb-intro.gif)
 
-## What is StackBlitz used for?
+## Для чего используется StackBlitz?
 
-### Delightful docs
+### Восхитительные документы
 
-Add interactive examples [from a GitHub repository](/guides/integration/open-from-github) or [hook up an existing StackBlitz project](/guides/integration/create-with-sdk) to your docs, blog, or website. Help your users fall in love with your project right from the first try.
+Добавьте интерактивные примеры [из репозитория GitHub](/guides/integration/open-from-github) или [подключите существующий проект StackBlitz](/guides/integration/create-with-sdk) в свои документы, блог или веб-сайт. Помогите пользователям влюбиться в ваш проект с первой попытки.
 
-### Interactive playgrounds
+### Интерактивные игровые площадки
 
-Create a [project starter](/guides/user-guide/starter-projects) or boilerplate code and let your users taste the full power of your project. Wanna take this a step further? Keep it on a [custom domain](https://stackblitz.new) so your users can access it even more easily.
+Создайте [стартовый проект](/guides/user-guide/starter-projects) или шаблонный код и дайте своим пользователям попробовать всю мощь вашего проекта. Хотите сделать еще один шаг вперед? Держите его на [пользовательском домене](https://stackblitz.new), чтобы вашим пользователям было еще проще получить к нему доступ.
 
 ### Quick demos
 
