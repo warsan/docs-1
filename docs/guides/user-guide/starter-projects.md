@@ -1,6 +1,6 @@
 ---
-title: Starter projects
-description: Starter projects are online playgrounds, typically built by the core team of a given project and run on StackBlitz.
+title: Стартовые проекты
+description: Стартовые проекты - это онлайновые игровые площадки, обычно создаваемые основной командой проекта и запускаемые на StackBlitz.
 ---
 
 <script setup lang="ts">
@@ -10,20 +10,20 @@ import { dotNewLinks } from './starters';
 
 # {{ $frontmatter.title }}
 
-This page covers what starter projects are, where to find them, and how to create a new one.
+На этой странице рассказывается о том, что такое стартовые проекты, где их найти и как создать новый проект.
 
-## What are starter projects?
+## Что такое стартовые проекты?
 
-Starter projects are online playgrounds, typically built by the core team of a given project and run on StackBlitz. They are used in project documentation or found under [a custom link](#new-domains). You can find some of them on our dashboard.
+Стартовые проекты - это онлайновые игровые площадки, обычно создаваемые основной командой проекта и запускаемые на StackBlitz. Они используются в документации проекта или находятся по [пользовательской ссылке](#new-domains). Некоторые из них вы можете найти на нашей приборной панели.
 
 ![Project Starter Dashboard](./assets/project-starters.png)
 
-## .new domains
+## домены .new
 
-Open Source projects can provide a custom URL as a convenient starting point for their online playground. Here is a list of some of these links:
+Проекты с открытым исходным кодом могут предоставить пользовательский URL в качестве удобной отправной точки для своей онлайн-площадки. Вот список некоторых из этих ссылок:
 
 <StarterGrid :links="dotNewLinks" />
 
-## Adding a new starter project
+## Добавление нового начального проекта
 
-If you'd like to see a new starter, please follow the directions on [this page in the integration guide](/guides/integration/open-from-github#set-up-the-main-starter-url).
+Если вы хотите увидеть новый стартер, следуйте указаниям на [этой странице руководства по интеграции](/guides/integration/open-from-github#set-up-the-main-starter-url).
