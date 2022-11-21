@@ -49,7 +49,7 @@ title: Справочник по параметрам SDK
 
 ## <var>ProjectDependencies</var> {#projectdependencies}
 
-Нет данных (истекло время ожидания отправки данных).
+A plain object representing npm packages and their versions, to be installed at runtime when the project loads.
 
 - Object keys: strings representing npm package names.
 - Object values: strings representing npm package version specifiers.
