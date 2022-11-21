@@ -49,35 +49,35 @@ title: Справочник по параметрам SDK
 
 ## <var>ProjectDependencies</var> {#projectdependencies}
 
-A plain object representing npm packages and their versions, to be installed at runtime when the project loads.
+Обычный объект, представляющий пакеты npm и их версии, которые будут установлены во время выполнения при загрузке проекта.
 
-- Object keys: strings representing npm package names.
-- Object values: strings representing npm package version specifiers.
+- Ключи объектов: строки, представляющие имена пакетов npm.
+- Значения объектов: строки, представляющие спецификаторы версий пакетов npm.
 
-:::info Environment differences
-ProjectDependencies are only used in the [EngineBlock environment][available_env_docs]. For WebContainers, please provide a `package.json` file instead.
+:::info Различия в окружающей среде
+ProjectDependencies используются только в среде [EngineBlock][available_env_docs]. Для WebContainers, пожалуйста, предоставьте файл `package.json`.
 
-Read more about [the recommended ways to specify project dependencies](/platform/api/javascript-sdk-dependencies) for each runtime environment.
+Подробнее о [рекомендуемых способах указания зависимостей проекта](/platform/api/javascript-sdk-dependencies) для каждой среды выполнения.
 :::
 
 ## <var>ProjectSettings</var> {#projectsettings}
 
-Compilation settings for [EngineBlock][available_env_docs] projects.
+Настройки компиляции для проектов [EngineBlock][available_env_docs].
 
 | Property | Type | Description | Default |
 | --- | --- | --- | --- |
-| `compile.trigger` | `'auto'`, `'save'`, or `'keystroke'` | Determines when the source changes should trigger compilation. | `'auto'` |
-| `compile.action` | `'hmr'` or `'refresh'` | Determines how compiled changes should be injected. | `'hmr'` |
-| `compile.clearConsole` | Boolean | Determines if the Console should be cleared after compilation. | `true` |
+| `compile.trigger` | `'auto'`, `'save'`, or `'keystroke'` | Определяет, когда изменения источника должны инициировать компиляцию. | `'auto'` |
+| `compile.action` | `'hmr'` or `'refresh'` | Определяет, как должны внедряться скомпилированные изменения. | `'hmr'` |
+| `compile.clearConsole` | Boolean | Определяет, следует ли очищать консоль после компиляции. | `true` |
 
-In projects running on [WebContainers][available_env_docs] (which use `template: 'node'`), only `compile.trigger` is used. This affects the time at which file changes in the editor are written to the virtual filesystem.
+В проектах, работающих на [WebContainers][available_env_docs] (которые используют `template: 'node'`), используется только `compile.trigger`. Это влияет на время записи изменений файлов в редакторе в виртуальную файловую систему.
 
 ## <var>OpenOptions</var> {#openoptions}
 
-Display options available when opening a project in a new window.
+Отображение опций, доступных при открытии проекта в новом окне.
 
 :::tip DEMO
-Check this demo showcasing all available open options:
+Посмотрите этот демо-ролик, демонстрирующий все доступные открытые опции:
 
 - [TypeScript demo](https://stackblitz.com/edit/sdk-open-embed-sb-projects-with-openoptions-ts)
 - [JavaScript demo](https://stackblitz.com/edit/sdk-open-embed-sb-projects-with-openoptions-js)
@@ -85,25 +85,25 @@ Check this demo showcasing all available open options:
 
 | Property | Type | Description | Default Value |
 | --- | --- | --- | --- |
-| `clickToLoad` | Boolean | Shows a UI dialog asking users to run the project. | `false` |
-| `devToolsHeight` | Number | Sets the [Console][ui_docs] height (from `0` to `100`). [EngineBlock][available_env_docs] only. | - |
-| `forceEmbedLayout` | Boolean | Whether to use the embed layout or the full editor layout. *This option is deprecated and will be removed in a future release.* | `false` |
-| `hideDevTools` | Boolean | Hides the [Console][ui_docs] completely. [EngineBlock][available_env_docs] only. | `false` |
-| `hideExplorer` | Boolean | Hides the [ActivityBar][ui_docs]. | `false` |
-| `newWindow` | Boolean | Opens the project in a new tab. | `true` |
-| `openFile` | [OpenFileOption][] (String or Array) | Specifies which file(s) to open in the editor and code lines to highlight. | - |
-| `origin` | String | StackBlitz Enterprise Edition: sets the origin URL of the StackBlitz EE instance. | - |
-| `showSidebar` | Boolean | Shows the [Sidebar][ui_docs] as open (`true`) or closed (`false`) on page load. | - |
-| `terminalHeight` | Number | Sets the [Terminal][ui_docs] height (from `0` to `100`). [WebContainers][available_env_docs] only. | `30` |
-| `theme` | [UiThemeOption][] (String) | Sets the desired color theme. | see [UiThemeOption][] |
-| `view` | [UiViewOption][] (String) | Sets the initial [UI view][ui_docs]: editor, preview, or both. | see [UiThemeOption][] |
+| `clickToLoad` | Boolean | Показывает диалоговое окно пользовательского интерфейса, предлагающее пользователям запустить проект. | `false` |
+| `devToolsHeight` | Number | Устанавливает высоту [Console][ui_docs] (от `0` до `100`). [EngineBlock][available_env_docs] only. | - |
+| `forceEmbedLayout` | Boolean | Использовать ли макет вставки или полный макет редактора. *Эта опция устарела и будет удалена в будущем релизе.* | `false` |
+| `hideDevTools` | Boolean | Полностью скрывает [Console][ui_docs]. [EngineBlock][available_env_docs] only. | `false` |
+| `hideExplorer` | Boolean | Скрывает панель [ActivityBar][ui_docs]. | `false` |
+| `newWindow` | Boolean | Открывает проект в новой вкладке. | `true` |
+| `openFile` | [OpenFileOption][] (String or Array) | Указывает, какой файл(ы) открыть в редакторе и какие строки кода выделить. | - |
+| `origin` | String | StackBlitz Enterprise Edition: устанавливает URL-адрес происхождения экземпляра StackBlitz EE. | - |
+| `showSidebar` | Boolean | Показывает [Sidebar][ui_docs] как открытый (`true`) или закрытый (`false`) при загрузке страницы. | - |
+| `terminalHeight` | Number | Устанавливает высоту [Terminal][ui_docs] (от `0` до `100`). [WebContainers][available_env_docs] only. | `30` |
+| `theme` | [UiThemeOption][] (String) | Устанавливает желаемую цветовую тему. | see [UiThemeOption][] |
+| `view` | [UiViewOption][] (String) | Устанавливает начальный вид [UI view][ui_docs]: редактор, предварительный просмотр или и то, и другое. | see [UiThemeOption][] |
 
 ## <var>EmbedOptions</var> {#embedoptions}
 
-Display options available when embedding a project in an iframe.
+Отображение опций, доступных при встраивании проекта в iframe.
 
 :::tip DEMO
-Check this demo showcasing all available embed options:
+Посмотрите этот демо-ролик, демонстрирующий все доступные варианты встраивания:
 
 - [TypeScript demo](https://stackblitz.com/edit/sdk-open-embed-sb-projects-with-embedoptions-ts)
 - [JavaScript demo](https://stackblitz.com/edit/sdk-open-embed-sb-projects-with-embedoptions-js)
@@ -111,100 +111,100 @@ Check this demo showcasing all available embed options:
 
 | Property | Type | Description | Default Value |
 | --- | --- | --- | --- |
-| `clickToLoad` | Boolean | Shows a UI dialog asking users to run the project. | `false` |
-| `devToolsHeight` | Number | Sets [Console][ui_docs] height (from `0` to `100`). [EngineBlock][available_env_docs] only. | - |
-| `forceEmbedLayout` | Boolean | Whether to use the embed layout or the full editor layout. *This option is deprecated and will be removed in a future release.* | `true` |
-| `height` | Number | Sets the height of the embed iframe. | `300` |
-| `hideDevTools` | Boolean | Hides the [Console][ui_docs] completely. [EngineBlock][available_env_docs] only. | `false` |
-| `hideExplorer` | Boolean | Hides the [ActivityBar][ui_docs]. | `false` |
-| `hideNavigation` | Boolean | Hides the preview URL in embeds. | `false` |
-| `openFile` | [OpenFileOption][] (String or Array) | Specifies which file(s) to open in the editor and code lines to highlight. | - |
-| `origin` | String | StackBlitz Enterprise Edition: sets the origin URL of the StackBlitz EE instance. | - |
-| `showSidebar` | Boolean | Shows the [Sidebar][ui_docs] as open (`true`) or closed (`false`) on page load. | - |
-| `terminalHeight` | Number | Sets [Terminal][ui_docs] height (from `0` to `100`). [WebContainers][available_env_docs] only. | `30` |
-| `theme` | [UiThemeOption][] (String) | Sets the desired color theme. | see [UiThemeOption][] |
-| `view` | [UiViewOption][] (String) | Sets the initial [UI view][ui_docs]: editor, preview, or both. | see [UiViewOption][] |
-| `width` | Number | Sets the width of the embed iframe. | `100%` |
+| `clickToLoad` | Boolean | Показывает диалоговое окно пользовательского интерфейса, предлагающее пользователям запустить проект. | `false` |
+| `devToolsHeight` | Number | Устанавливает высоту [Console][ui_docs] (от `0` до `100`). Только [EngineBlock][available_env_docs]. | - |
+| `forceEmbedLayout` | Boolean | Использовать ли макет вставки или полный макет редактора. *Эта опция устарела и будет удалена в будущем релизе.* | `true` |
+| `height` | Number | Устанавливает высоту встроенного iframe. | `300` |
+| `hideDevTools` | Boolean | Полностью скрывает [Console][ui_docs]. [EngineBlock][available_env_docs] only. | `false` |
+| `hideExplorer` | Boolean | Скрывает панель [ActivityBar][ui_docs]. | `false` |
+| `hideNavigation` | Boolean | Скрывает URL-адрес предпросмотра во вставках. | `false` |
+| `openFile` | [OpenFileOption][] (String or Array) | Указывает, какой файл(ы) открыть в редакторе и какие строки кода выделить. | - |
+| `origin` | String | StackBlitz Enterprise Edition: устанавливает URL-адрес происхождения экземпляра StackBlitz EE. | - |
+| `showSidebar` | Boolean | Показывает [Sidebar][ui_docs] как открытый (`true`) или закрытый (`false`) при загрузке страницы. | - |
+| `terminalHeight` | Number | Устанавливает высоту [Terminal][ui_docs] (от `0` до `100`). Только [WebContainers][available_env_docs]. | `30` |
+| `theme` | [UiThemeOption][] (String) | Устанавливает желаемую цветовую тему. | see [UiThemeOption][] |
+| `view` | [UiViewOption][] (String) | Устанавливает начальный вид [UI view][ui_docs]: редактор, предварительный просмотр или и то, и другое. | see [UiViewOption][] |
+| `width` | Number | Устанавливает ширину встроенного iframe. | `100%` |
 
 ## <var>OpenFileOption</var> {#openfileoption}
 
-Specifies file paths to open in the editor. It can be a single string or an array of strings, where each string is a comma-separated list of file paths.
+Указывает пути к файлам для открытия в редакторе. Это может быть одна строка или массив строк, где каждая строка представляет собой список путей к файлам, разделенных запятыми.
 
 :::tip DEMO
-Check this demo showcasing all available open file options:
+Посмотрите этот демо-ролик, демонстрирующий все доступные варианты открытых файлов:
 
 - [TypeScript demo](https://stackblitz.com/edit/sdk-openfileoption-ts)
 - [JavaScript demo](https://stackblitz.com/edit/sdk-openfileoption-js)
 :::
 
-File paths can include lines of code to be highlighted, using the format `{path}:L{start}` for a single line and `{path}:L{start}-L{end}` for a range. Any file change will remove the highlight selection.
+Пути к файлам могут включать строки кода, которые нужно выделить, используя формат `{путь}:L{начало}` для одной строки и `{путь}:L{начало}-L{конец}` для диапазона. Любое изменение файла приведет к удалению выделенной области.
 
-Example with a single file:
+Пример с одним файлом:
 
 ```js
-  // Opens a single file
+  // Открывает один файл
   openFile: 'src/App.tsx',
 ```
 
-Example with a single file with third line highlighted:
+Пример с одним файлом с выделенной третьей строкой:
 
 ```js
-  // Opens a single file and highlights the third line
+  // Открывает один файл и выделяет третью строку
   openFile: 'src/App.tsx:L3',
 ```
 
-Example with a single file with a range (lines 5-8) highlighted:
+Пример с одним файлом с выделенным диапазоном (строки 5-8):
 
 ```js
-  // Opens a single file and highlights a range
+  // Открывает один файл и выделяет диапазон
   openFile: 'src/App.tsx:L5-L8',
 ```
 
-Example with three editor tabs (the last file is displayed):
+Пример с тремя вкладками редактора (отображается последний файл):
 
 ```js
-  // Opens three editor tabs with the last file displayed
+  // Открывает три вкладки редактора с отображением последнего файла
   openFile: 'index.html,package.json,src/App.tsx',
 ```
 
-Example with three editor panes with one tab in each pane:
+Пример с тремя панелями редактора с одной вкладкой в каждой панели:
 
 ```js
-  // Opens three side-by-side editor panes with one tab in each pane
+  // Открывает три боковые панели редактора с одной вкладкой в каждой панели
   openFile: ['index.html', 'package.json', 'src/App.tsx'],
 ```
 
-Example with two editor panes with two tabs in each pane:
+Пример с двумя панелями редактора с двумя вкладками в каждой панели:
 
 ```js
-  // Opens two editor panes with two tabs in each pane
+  // Открывает две панели редактора с двумя вкладками в каждой панели
   openFile: ['index.html,package.json', 'src/App.tsx,src/App.css'],
 ```
 
 ## <var>UiThemeOption</var> {#uithemeoption}
 
-The name of the color theme supported by the embedded editor.
+Имя цветовой темы, поддерживаемой встроенным редактором.
 
 | Value | Description |
 | --- | --- |
-| `'default'` | Uses the default theme (currently: `'dark'`). |
-| `'dark'` | The built-in dark theme. |
-| `'light'` | The built-in light theme. |
+| `'default'` | Использует тему по умолчанию (в настоящее время: `'тёмный'`). |
+| `'dark'` | Встроенная тёмная тема. |
+| `'light'` | Встроенная световая тема. |
 
 ## <var>UiViewOption</var> {#uiviewoption}
 
-Controls the display mode of the project.
+Управляет режимом отображения проекта.
 
-This only declares an _intent_, and the available values may behave differently depending on:
+Это только декларирует _намерение_, и доступные значения могут вести себя по-разному в зависимости от:
 
-- the viewport width;
-- whether the project is rendered in a tab (“standard layout”) or iframe (“embed layout”).
+- ширина области просмотра;
+- отображается ли проект во вкладке ("стандартный макет") или в iframe ("встроенный макет").
 
 | Value | Description |
 | --- | --- |
-| `'default'` | Shows Preview and Editor on large viewports, Editor only in small viewports |
-| `'preview'` | Shows the Preview only (embed layout only) |
-| `'editor'` | Shows the Editor only (embed and standard layouts) |
+| `'default'` | Показывает предпросмотр и редактор на больших видовых экранах, редактор только на маленьких видовых экранах |
+| `'preview'` | Показывает только предпросмотр (только для макета встраивания) |
+| `'editor'` | Показывает только редактор (встраивание и стандартные макеты) |
 
 [available_env_docs]: /guides/user-guide/available-environments
 [ui_docs]:  /guides/user-guide/ide-whats-on-your-screen
