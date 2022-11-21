@@ -55,28 +55,28 @@ StackBlitz Enterprise имеет встроенный инструмент дл�
 
 ### Начальная конфигурация
 
-Once the admin console is running, visit `http://localhost:8800` and upload your license. StackBlitz Enterprise is delivered as ready-to-run YAML, but you might need to make some changes for your specific environment. In the Admin Console, click “Config”. This will show a form where you can provide your settings. These will be written as Kubernetes secrets in the deployment manifests.
+После запуска консоли администратора посетите сайт `http://localhost:8800` и загрузите свою лицензию. StackBlitz Enterprise поставляется в виде готового к запуску YAML, но вам может потребоваться внести некоторые изменения для вашей конкретной среды. В консоли администратора нажмите "Config". Появится форма, в которой вы можете указать свои настройки. Они будут записаны как секреты Kubernetes в манифестах развертывания.
 
-### Config options
+### Параметры конфигурации
 
-#### DNS Zone
+#### Зона DNS
 
-Sets the DNS hostname used to expose the application and its services.
+Устанавливает имя хоста DNS, используемое для открытия приложения и его служб.
 
-#### Database
+#### База данных
 
-Allows you to pick which database to use. By default, an embedded Postgres will be used. You can also choose to provide an inline Postgres or Postgres via a secret.
+Позволяет выбрать, какую базу данных использовать. По умолчанию будет использоваться встроенный Postgres. Вы также можете предоставить встроенный Postgres или Postgres через секрет.
 
-#### Storage
+#### Хранение
 
-An embedded Minio is used as bucket by default. You can also provide your own S3-compatible bucket to be used.
+По умолчанию в качестве ведра используется встроенный Minio. Вы также можете предоставить свой собственный S3-совместимый ведро, который будет использоваться.
 
-You can also configure the bucket names to be used for Turbo, bundle hydration caching, and image storage. 
+Вы также можете настроить имена ведер, которые будут использоваться для Turbo, кэширования гидратации пучков и хранения изображений. 
 
-#### TLS settings
+#### Настройки TLS
 
-Here you can provide the certificate to be used for domain on which you are hosting your app.
+Здесь вы можете указать сертификат, который будет использоваться для домена, на котором вы размещаете своё приложение.
 
-#### Kubernetes settings 
+#### Настройки Kubernetes 
 
-Here you can define the namespace in which you installed the application. For embedded installs, the default should be fine. For 'existing cluster' installs, you should provide the namespace.
+Здесь вы можете определить пространство имён, в котором вы установили приложение. Для встроенных установок подходит значение по умолчанию. При установке "существующего кластера" необходимо указать пространство имён.
