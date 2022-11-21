@@ -1,25 +1,25 @@
 ---
-title: Controlling embeds with the SDK’s VM interface
+title: Управление вставками с помощью интерфейса VM SDK
 ---
 
 # {{ $frontmatter.title }}
 
 :::info
-These methods only apply to projects embedded on a page.
+Эти методы применимы только к проектам, внедренным на страницу.
 :::
 
-All of the embed methods of the [StackBlitz JS SDK][sdk_docs] automatically connect to the embedded StackBlitz <abbr title="Virtual Machine">VM</abbr>, giving you programmatic access to the embedded project.
+Все методы embed [StackBlitz JS SDK][sdk_docs] автоматически подключаются к встроенной StackBlitz <abbr title="Virtual Machine">VM</abbr>, предоставляя вам программный доступ к встроенному проекту.
 
-Use the VM to:
+Используйте виртуальную машину для:
 
-- control the UI of an embedded StackBlitz project;
-- change the currently open file(s);
-- read and write files from the project’s virtual filesystem.
+- управлять пользовательским интерфейсом встроенного проекта StackBlitz;
+- изменить текущий открытый файл(ы);
+- чтение и запись файлов из виртуальной файловой системы проекта.
 
-## Getting access to the VM
+## Получение доступа к виртуальной машине
 
 :::tip DEMO
-Check this demo of using the VM:
+Посмотрите этот демонстрационный пример использования виртуальной машины:
 
 - [TypeScript demo](https://stackblitz.com/edit/sdk-vm)
 - [JavaScript demo](https://stackblitz.com/edit/sdk-vm-js)
@@ -27,20 +27,20 @@ Check this demo of using the VM:
 
 ### With <var>embed</var> methods
 
-The `embedProject`, `embedProjectId`, and `embedGithubProject` methods of the SDK return a Promise resolving to an instance of the SDK’s `VM` class. We recommend using `await` in an `async` function to keep track of the VM instance. For example:
+Методы SDK `embedProject`, `embedProjectId` и `embedGithubProject` возвращают Promise, разрешающий экземпляр класса SDK `VM`. Мы рекомендуем использовать `await` в функции `async` для отслеживания экземпляра виртуальной машины. Например:
 
 ```js
 import sdk from '@stackblitz/sdk';
 
 async function start() {
-  // Embeds a project and keeps track of the VM
+  // Встраивает проект и следит за VM
   const vm = await sdk.embedProjectId('embed', 'react-ts');
 
-  // Performs an action with VM
+  // Выполняет действие с VM
   const deps = await vm.getDependencies();
   await vm.applyFsDiff({
     create: {
-      'hello.txt': 'Hello, this is a new file!',
+      'hello.txt': 'Здравствуйте, это новый файл!',
       'deps.txt': JSON.stringify(deps, null, 2),
     },
     destroy: [],
@@ -52,23 +52,23 @@ start();
 
 ### With <var>connect<small>(iframe)</small></var> {#connect}
 
-The SDK’s `connect` method can be used to retrieve the `VM` instance for an existing StackBlitz iframe.
+Метод SDK `connect` можно использовать для получения экземпляра `VM` для существующего iframe StackBlitz.
 
 | Argument | Required | Type              | Description                               |
 | -------- | -------- | ----------------- | ----------------------------------------- |
-| `iframe` | Yes      | HTMLIframeElement | An iframe embedding a StackBlitz project. |
+| `iframe` | Yes      | HTMLIframeElement | iframe, встраивающий проект StackBlitz. |
 
-Example:
+Пример:
 
 ```js
 import sdk from '@stackblitz/sdk';
 
 const EMBED_ID = 'embed';
 
-// Embeds iframe
+// Встраивает iframe
 sdk.embedProjectId(EMBED_ID, 'react-ts');
 
-// Retrieves and uses the VM when clicking a button
+// Получает и использует VM при нажатии на кнопку
 document.getElementById('test-button').addEventListener('click', async () => {
   const iframe = document.getElementById(EMBED_ID);
   const vm = await sdk.connect(iframe);
@@ -77,23 +77,23 @@ document.getElementById('test-button').addEventListener('click', async () => {
 });
 ```
 
-## VM properties and methods
+## Свойства и методы VM
 
 ### <var>applyFsDiff<small>(diff)</small></var> {#applyfsdiff}
 
-Updates project files. Returns a promise resolving to `null`.
+Обновляет файлы проекта. Возвращает обещание, разрешающееся в `null`.
 
 | Argument       | Required | Type   | Description                                           |
 | -------------- | -------- | ------ | ----------------------------------------------------- |
-| `diff`         | Yes      | Object | Specifies files to create or delete                   |
-| `diff.create`  | Yes      | Object | Object with file paths as keys and contents as values |
-| `diff.destroy` | Yes      | Array  | File paths of the files to delete                     |
+| `diff`         | Yes      | Object | Указывает файлы для создания или удаления                   |
+| `diff.create`  | Yes      | Object | Объект с путями к файлам в качестве ключей и содержимым в качестве значений |
+| `diff.destroy` | Yes      | Array  | Пути к файлам, которые необходимо удалить                     |
 
 :::info
-When modifying existing files, the new content of the modified files must be provided in full.
+При изменении существующих файлов новое содержимое измененных файлов должно быть представлено полностью.
 :::
 
-Example:
+Пример:
 
 ```js
 await vm.applyFsDiff({
@@ -107,27 +107,27 @@ await vm.applyFsDiff({
 
 ### <var>getDependencies<small>()</small></var> {#getdependencies}
 
-Gets the project’s defined dependencies. Returns a promise resolving to a [ProjectDependencies][] object.
+Получает определенные зависимости проекта. Возвращает обещание, разрешающее объект [ProjectDependencies][].
 
-In [EngineBlock][env_docs] projects, it returns the dependencies as resolved by the built-in package manager, with exact versions as values. For example: `{ 'react': '18.2.0' }`.
+В проектах [EngineBlock][env_docs] он возвращает зависимости, разрешенные встроенным менеджером пакетов, с точными версиями в качестве значений. Например: `{ 'react': '18.2.0' }`.
 
-_Since 1.7.0:_ in project running on [WebContainers][env_docs], it reads the contents of the top-level `package.json` file and returns an object merging `dependencies` and `devDependencies`, with the original version specifiers as values. For example, `{ 'react': '^18.0.0' }`.
+_С версии 1.7.0:_ в проекте, работающем на [WebContainers][env_docs], он читает содержимое файла верхнего уровня `package.json` и возвращает объект, объединяющий `dependencies` и `devDependencies`, с исходными спецификаторами версии в качестве значений. Например, `{ 'react': '^18.0.0' }`.
 
-Example:
+Пример:
 
 ```js
 const deps = await vm.getDependencies();
 
 if (typeof deps['vue'] === 'string') {
-  console.log('Looks like a Vue.js project');
+  console.log('Выглядит как проект Vue.js');
 }
 ```
 
 ### <var>getFsSnapshot<small>()</small></var> {#getfssnapshot}
 
-Gets a snapshot of the project files and their content. Returns a promise resolving to a [ProjectFiles][] object.
+Получает снимок файлов проекта и их содержимого. Возвращает обещание, разрешающее объект [ProjectFiles][].
 
-Example:
+Пример:
 
 ```js
 const files = await vm.getFsSnapshot();
@@ -136,31 +136,31 @@ console.log(files); // { 'index.js': '…', 'package.json': '…', … }
 
 ### <var>editor.openFile<small>(path)</small></var> {#editoropenfile}
 
-Opens one or several files in tabs and/or split panes. Returns a promise resolving to `null`.
+Открывает один или несколько файлов на вкладках и/или разделенных панелях. Возвращает обещание, разрешающееся в `null`.
 
 | Argument | Required | Type                                            | Description                |
 | -------- | -------- | ----------------------------------------------- | -------------------------- |
 | `path`   | Yes      | [OpenFileOption][] (String or array of strings) | Path(s) of file(s) to open |
 
-Example:
+Пример:
 
 ```js
-// opens a single file
+// открывает один файл
 await vm.editor.openFile('src/App.css');
 
-// opens two editor panes
+// открывает две панели редактора
 await vm.editor.openFile(['README.md', 'index.js']);
 ```
 
 ### <var>editor.setCurrentFile<small>(path)</small></var> {#editorsetcurrentfile}
 
-_Since 1.7.0. Experimental: exact behavior may change._
+_С версии 1.7.0. Экспериментальный: точное поведение может измениться._
 
-Sets a project file as the currently selected file. Returns a promise resolving to `null`.
+Устанавливает файл проекта в качестве текущего выбранного файла. Возвращает обещание, разрешающееся в `null`.
 
 | Argument | Required | Type   | Description                        |
 | -------- | -------- | ------ | ---------------------------------- |
-| `path`   | Yes      | String | Path of the file to set as current |
+| `path`   | Yes      | String | Путь к файлу, который нужно установить в качестве текущего |
 
 - This may update the highlighted file in the file explorer, and the currently open and/or focused editor tab.
 - If the provided path does not match a currently open tab, a new editor tab will _not_ open. See [`vm.editor.openFile`](#editoropenfile) to open files.
