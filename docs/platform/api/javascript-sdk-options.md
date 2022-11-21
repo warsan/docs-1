@@ -1,27 +1,27 @@
 ---
-title: SDK Options Reference
+title: Справочник по параметрам SDK
 ---
 
 # {{ $frontmatter.title }}
 
 ## <var>Project</var> {#project}
 
-An object defining the contents and settings of a StackBlitz project.
+Объект, определяющий содержимое и настройки проекта StackBlitz.
 
 | Property | Required |  Type | Description |
 | --- | --- | --- | --- |
-| `title` | Yes | String | The project title. |
-| `description` | Yes | String | A short description for this project. |
-| `template` | Yes | [ProjectTemplate][] (String) | Determines how code compiles and runs. |
-| `files` | Yes | [ProjectFiles][] (Object) | Project files and their contents. |
-| `dependencies` | No | [ProjectDependencies][] (Object) | Specifies npm dependencies ([EngineBlock][available_env_docs] only). |
-| `settings` | No | [ProjectSettings][] (Object) | Code compilation behavior ([EngineBlock][available_env_docs] only). |
+| `title` | Yes | String | Название проекта. |
+| `description` | Yes | String | Краткое описание этого проекта. |
+| `template` | Yes | [ProjectTemplate][] (String) | Определяет, как компилируется и выполняется код. |
+| `files` | Yes | [ProjectFiles][] (Object) | Файлы проекта и их содержимое. |
+| `dependencies` | No | [ProjectDependencies][] (Object) | Указывает зависимости npm (только для [EngineBlock][available_env_docs]). |
+| `settings` | No | [ProjectSettings][] (Object) | Поведение при компиляции кода (только для [EngineBlock][available_env_docs]). |
 
 ## <var>ProjectTemplate</var> {#projecttemplate}
 
-A string representing a supported template type.
+Строка, представляющая поддерживаемый тип шаблона.
 
-Each template has its own rules for compiling source files, and requires specific files to be present.
+Каждый шаблон имеет свои правила компиляции исходных файлов и требует наличия определенных файлов.
 
 | Template name | Environment | Required files |
 | --- | --- | --- |
@@ -36,20 +36,20 @@ Each template has its own rules for compiling source files, and requires specifi
 
 ## <var>ProjectFiles</var> {#projectfiles}
 
-A plain object representing file paths and their contents.
+Обычный объект, представляющий пути к файлам и их содержимое.
 
-- Object keys: strings representing file paths (from the root of the project).
-- Object values: strings representing file contents (text only).
+- Ключи объектов: строки, представляющие пути к файлам (от корня проекта).
+- Значения объектов: строки, представляющие содержимое файла (только текст).
 
-:::warning Supported file types
-Only plain text files (including code, data, and SVG images) are supported in ProjectFiles.
+:::warning Поддерживаемые типы файлов
+В ProjectFiles поддерживаются только обычные текстовые файлы (включая код, данные и изображения SVG).
 
-Binary files (such as archive formats, binaries and executables, bitmap images, audio and video files) are not supported at this time.
+Бинарные файлы (такие как архивные форматы, двоичные и исполняемые файлы, растровые изображения, аудио- и видеофайлы) в настоящее время не поддерживаются.
 :::
 
 ## <var>ProjectDependencies</var> {#projectdependencies}
 
-A plain object representing npm packages and their versions, to be installed at runtime when the project loads.
+Нет данных (истекло время ожидания отправки данных).
 
 - Object keys: strings representing npm package names.
 - Object values: strings representing npm package version specifiers.
