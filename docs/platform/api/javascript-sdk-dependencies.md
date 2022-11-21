@@ -1,22 +1,22 @@
 ---
-title: Managing dependencies with the SDK
+title: Управление зависимостями с помощью SDK
 ---
 
 # {{ $frontmatter.title }}
 
-When creating new projects with the [`sdk.openProject`](/platform/api/javascript-sdk#openproject) and [`sdk.embedProject`](/platform/api/javascript-sdk#embedproject) methods, you can specify which npm dependencies should be installed on startup.
+При создании новых проектов с помощью методов [`sdk.openProject`](/platform/api/javascript-sdk#openproject) и [`sdk.embedProject`](/platform/api/javascript-sdk#embedproject) можно указать, какие зависимости npm должны быть установлены при запуске.
 
-The expected way to specify dependencies depends on the [runtime environment](/guides/user-guide/available-environments).
+Предполагаемый способ указания зависимостей зависит от [среды выполнения](/guides/user-guide/available-environments).
 
-:::info Reminder
-Projects created with the `template: 'node'` option will use the WebContainers environment (currently on stackblitz.com only). Projects created with a different `template` value will use the EngineBlock environment (available on stackblitz.com and StackBlitz Enterprise Edition).
+:::info Напоминание
+Проекты, созданные с помощью `шаблона: Опция 'node'` будет использовать среду WebContainers (в настоящее время только на stackblitz.com). Проекты, созданные с другим значением `template`, будут использовать среду EngineBlock (доступна на stackblitz.com и StackBlitz Enterprise Edition).
 :::
 
-## With WebContainers
+## С помощью WebContainers
 
-For WebContainers project, our [Turbo package manager](/platform/webcontainers/turbo-package-manager) will install `dependencies` and `devDependencies` from the project’s `package.json` file, much like `npm`, `pnpm` or `yarn` would.
+Для проекта WebContainers наш [Turbo package manager](/platform/webcontainers/turbo-package-manager) будет устанавливать `dependencies` и `devDependencies` из файла проекта `package.json`, подобно тому, как это делают `npm`, `pnpm` или `yarn`.
 
-For those projects, you can provide your dependencies directly in the `package.json` file, and ignore the `project.dependencies` option. Here’s an example:
+Для этих проектов вы можете указать свои зависимости непосредственно в файле `package.json` и игнорировать опцию `project.dependencies`. Вот пример:
 
 ```js
 import sdk from '@stackblitz/sdk';
@@ -46,19 +46,19 @@ sdk.openProject(project);
 ```
 
 :::tip DEMO
-Check this complete Angular project:
+Посмотрите этот полный проект Angular:
 
 - [TypeScript demo](https://stackblitz.com/edit/sdk-webcontainers-dependencies-ts)
 - [JavaScript demo](https://stackblitz.com/edit/sdk-webcontainers-dependencies-js)
 :::
 
-## With EngineBlock
+## С помощью EngineBlock
 
-For EngineBlock projects, provide dependencies using the `project.dependencies` option. The `package.json` file will not be used to resolve dependencies, but it is still highly recommended to provide one so that your project can continue to work as expected when downloaded with the right `devDependencies` and `scripts`. You can customize `devDependencies` and other properties of `package.json`, but dependencies for EngineBlock are always resolved using `project.dependencies` instead of `package.json`.
+Для проектов EngineBlock укажите зависимости, используя опцию `project.dependencies`. Файл `package.json` не будет использоваться для разрешения зависимостей, но все же настоятельно рекомендуется предоставить его, чтобы ваш проект продолжал работать как ожидается при загрузке с правильными `devDependencies` и `scripts`. Вы можете настроить `devDependencies` и другие свойства `package.json`, но зависимости для EngineBlock всегда определяются с помощью `project.dependencies`, а не `package.json`.
 
-### Dependencies plus package.json
+### Зависимости плюс package.json
 
-In the next example, we will show how to generate this project:
+В следующем примере мы покажем, как сгенерировать этот проект:
 
 <img
   width="1000"
@@ -66,7 +66,7 @@ In the next example, we will show how to generate this project:
   alt="Screenshot of a project showing three packages in the “Dependencies” section of the sidebar, and an editor tab with the same dependencies in a package.json file."
 />
 
-Since we don’t want to risk having mismatched dependencies, we’ll define the `package.json` data first, and use that to set the `project.dependencies` as well.
+Поскольку мы не хотим рисковать несовпадением зависимостей, мы сначала определим данные `package.json`, а затем используем их для установки `project.dependencies`.
 
 ```js
 import sdk from '@stackblitz/sdk';
@@ -86,10 +86,10 @@ const project = {
   title: 'My cool project',
   description: 'Example animation project',
   template: 'javascript',
-  // REQUIRED: specify dependencies
+  // ТРЕБУЕТСЯ: указать зависимости
   dependencies: PACKAGE_JSON.dependencies,
   files: {
-    // Recommended: provide a package.json file with the same dependencies
+    // Рекомендуется: предоставить файл package.json с теми же зависимостями
     'package.json': JSON.stringify(PACKAGE_JSON, null, 2),
     'index.html': '<h1>Hello world!</h1>',
     'index.js': 'import gsap from "gsap";\n// etc.',
@@ -100,21 +100,21 @@ sdk.openProject(project);
 ```
 
 :::tip DEMO
-Check this complete Angular project:
+Посмотрите этот полный проект Angular:
 
 - [TypeScript demo](https://stackblitz.com/edit/sdk-angular-dependencies?file=project.ts)
 - [JavaScript demo](https://stackblitz.com/edit/sdk-angular-dependencies-js)
 :::
 
-### Inherited dependencies
+### Наследуемые зависимости
 
-A useful but sometimes confusing feature of the `project.template` value is that it will retrieve an initial dependency list from a “parent” project. For instance, when using the `template: 'angular-cli'` option to generate an Angular project on stackblitz.com, the dependencies and version numbers from https://stackblitz.com/edit/angular will be used initially.
+Полезной, но иногда запутанной особенностью значения `project.template` является то, что оно получает начальный список зависимостей из "родительского" проекта. Например, при использовании `template: 'angular-cli'` опция для генерации проекта Angular на stackblitz.com, изначально будут использоваться зависимости и номера версий с сайта https://stackblitz.com/edit/angular.
 
-At this time, there is no way to control which project is selected as the “parent” project for a given `template` value.
+В настоящее время нет возможности контролировать, какой проект выбирается в качестве "родительского" для заданного значения `template`.
 
-In some cases, inherited dependencies can cause your project to show:
+В некоторых случаях унаследованные зависимости могут стать причиной появления вашего проекта:
 
-- unnecessary dependencies;
-- outdated package versions.
+- ненужные зависимости;
+- устаревшие версии пакетов.
 
-To work around this problem, we recommend specifying all the dependencies and the version ranges your project uses with the `project.dependencies` option.
+Чтобы обойти эту проблему, мы рекомендуем указать все зависимости и диапазоны версий, которые использует ваш проект, с помощью опции `project.dependencies`.
