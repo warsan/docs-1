@@ -2,30 +2,30 @@
 title: POST API
 ---
 
-# Creating a project with a POST request
+# Создание проекта с помощью POST-запроса
 
-Create new projects by POSTing the desired project data from a form. This method is useful when you don't or can't use our JavaScript SDK.
+Создавайте новые проекты, размещая нужные данные проекта в форме. Этот метод полезен, когда вы не используете или не можете использовать наш JavaScript SDK.
 
-This page will guide you through the setup. You can also take a look at [the demo project](#demo) at the end.
+Эта страница поможет вам выполнить настройку. Вы также можете взглянуть на [демонстрационный проект](#demo) в конце.
 
-## Required Form Fields
+## Обязательные поля формы
 
 ```
-project[title] = Project title
-project[description] = Project description
-project[files][FILE_PATH] = Contents of file, specify file path as key
-project[files][ANOTHER_FILE_PATH] = Contents of file, specify file path as key
-project[dependencies] = JSON string of dependencies field from package.json
-project[template] = Can be one of: typescript, angular-cli, create-react-app, javascript
+project[title] = Название проекта
+project[description] = Описание проекта
+project[files][FILE_PATH] = Содержимое файла, в качестве ключа укажите путь к файлу
+project[files][ANOTHER_FILE_PATH] = Содержимое файла, в качестве ключа укажите путь к файлу
+project[dependencies] = JSON-строка поля зависимостей из package.json
+project[template] = Может быть одним из: typescript, angular-cli, create-react-app, javascript
 ```
 
 :::warning
-Binary files (such as archives or non-SVG images) are not supported for the dynamically created projects.
+Бинарные файлы (такие как архивы или изображения не-SVG) не поддерживаются для динамически создаваемых проектов.
 :::
 
-## Example Payload
+## Пример полезной нагрузки
 
-Below is an example HTML form that generates a project from the RxJS docs using the `typescript` template:
+Ниже приведен пример HTML-формы, которая генерирует проект из документации RxJS с использованием шаблона `typescript`:
 
 ```html
 <html lang="en">
@@ -54,8 +54,8 @@ Observable.fromEvent(button, 'click')
 </body></html>
 ```
 
-## Demo
+## Демо
 
 :::tip DEMO
-Check this [demo of using POST API to create a project](https://stackblitz.com/edit/sdk-create-via-post-api).
+Посмотрите это [демонстрация использования POST API для создания проекта](https://stackblitz.com/edit/sdk-create-via-post-api).
 :::
