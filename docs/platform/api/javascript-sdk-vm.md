@@ -140,7 +140,7 @@ console.log(files); // { 'index.js': '…', 'package.json': '…', … }
 
 | Argument | Required | Type                                            | Description                |
 | -------- | -------- | ----------------------------------------------- | -------------------------- |
-| `path`   | Yes      | [OpenFileOption][] (String or array of strings) | Path(s) of file(s) to open |
+| `path`   | Yes      | [OpenFileOption][] (Строка или массив строк) | Путь(и) файла(ов) для открытия |
 
 Пример:
 
@@ -162,10 +162,10 @@ _С версии 1.7.0. Экспериментальный: точное пов�
 | -------- | -------- | ------ | ---------------------------------- |
 | `path`   | Yes      | String | Путь к файлу, который нужно установить в качестве текущего |
 
-- This may update the highlighted file in the file explorer, and the currently open and/or focused editor tab.
-- If the provided path does not match a currently open tab, a new editor tab will _not_ open. See [`vm.editor.openFile`](#editoropenfile) to open files.
+- Это может обновить выделенный файл в проводнике файлов, а также текущую открытую и/или сфокусированную вкладку редактора.
+- Если указанный путь не соответствует открытой в данный момент вкладке, новая вкладка редактора _не_ откроется. См. [`vm.editor.openFile`](#editoropenfile) для открытия файлов.
 
-Example:
+Пример:
 
 ```js
 await vm.editor.setCurrentFile('src/App.css');
@@ -173,13 +173,13 @@ await vm.editor.setCurrentFile('src/App.css');
 
 ### <var>editor.setTheme<small>(theme)</small></var>
 
-_Since 1.7.0._
+_Начиная с 1.7.0._
 
-Changes the editor’s color theme. Returns a promise resolving to `null`.
+Изменяет цветовую тему редактора. Возвращает обещание, разрешающееся в `null`.
 
 | Argument | Required | Type                       | Description           |
 | -------- | -------- | -------------------------- | --------------------- |
-| `theme`  | Yes      | [UiThemeOption][] (String) | The color theme name. |
+| `theme`  | Yes      | [UiThemeOption][] (String) | Название цветовой темы. |
 
 ```js
 await vm.editor.setTheme('light');
@@ -187,13 +187,13 @@ await vm.editor.setTheme('light');
 
 ### <var>editor.setView<small>(view)</small></var>
 
-_Since 1.7.0._
+_Начиная с 1.7.0._
 
-Changes the display mode of the project. Returns a promise resolving to `null`.
+Изменяет режим отображения проекта. Возвращает обещание, разрешающееся в `null`.
 
 | Argument | Required | Type                      | Description            |
 | -------- | -------- | ------------------------- | ---------------------- |
-| `view`   | Yes      | [UiViewOption][] (String) | The display mode name. |
+| `view`   | Yes      | [UiViewOption][] (String) | Название режима отображения. |
 
 ```js
 await vm.editor.setView('preview');
@@ -201,13 +201,13 @@ await vm.editor.setView('preview');
 
 ### <var>editor.showSidebar<small>(visible)</small></var>
 
-_Since 1.7.0._
+_Начиная с 1.7.0._
 
-Changes the display mode of the sidebar. Returns a promise resolving to `null`.
+Изменяет режим отображения боковой панели. Возвращает обещание, разрешающееся в `null`.
 
 | Argument  | Required | Type    | Description                                                |
 | --------- | -------- | ------- | ---------------------------------------------------------- |
-| `visible` | No       | Boolean | Use `true` (default) to show the sidebar, `false` to hide. |
+| `visible` | No       | Boolean | Используйте «true» (по умолчанию), чтобы показать боковую панель, «false», чтобы скрыть. |
 
 ```js
 await vm.editor.showSidebar(true);
@@ -215,56 +215,56 @@ await vm.editor.showSidebar(true);
 
 ### <var>preview.origin</var> {#previeworigin}
 
-A string with the origin (protocol and domain) of the preview iframe. Every project created with the `embedProject` method gets a unique preview URL.
+Строка с источником (протокол и домен) предварительного просмотра iframe. Каждый проект, созданный с помощью метода embedProject, получает уникальный URL-адрес предварительного просмотра.
 
-Because it is unknown ahead of time if the project will run a web server (and if so, on which port), `vm.preview.origin` will always be `null` in projects running on [WebContainers][env_docs]. You can use [`vm.preview.getUrl`](#previewgeturl) instead.
+Поскольку заранее неизвестно, будет ли проект работать на веб-сервере (и если да, то на каком порту), `vm.preview.origin` всегда будет `null` в проектах, работающих в [WebContainers][env_docs]. Вместо этого вы можете использовать [`vm.preview.getUrl`](#previewgeturl).
 
-Example:
+Пример:
 
 ```js
 if (vm.preview.origin) {
-  console.log('Preview is running at ' + vm.preview.origin);
+  console.log('Предпросмотр запущен в ' + vm.preview.origin);
 }
 ```
 
 ### <var>preview.getUrl<small>()</small></var> {#previewgeturl}
 
-_Since 1.7.0. Experimental: exact behavior may change._
+_С версии 1.7.0. Экспериментально: точное поведение может измениться._
 
-Gets the current preview URL. Returns a promise resolving to a string or to `null`.
+Получает текущий URL-адрес предварительного просмотра. Возвращает обещание, разрешающееся в строку или в `null`.
 
-The preview URL may not reflect the exact path of the current page if the user or page code has triggered a navigation within the preview iframe.
+URL-адрес предварительного просмотра может не отражать точный путь к текущей странице, если код пользователя или страницы инициировал навигацию в окне предварительного просмотра iframe.
 
-In WebContainers projects, the preview URL will be `null` initially, and until the project starts a web server.
+В проектах WebContainers URL-адрес предварительного просмотра изначально будет нулевым, пока проект не запустит веб-сервер.
 
-Example:
+Пример:
 
 ```js
 const url = await vm.preview.getUrl();
 
 if (url != null && url.startsWith('/about')) {
-  console.log('Looks like the About page!');
+  console.log('Похоже на страницу «О нас»!');
 }
 ```
 
 ### <var>preview.setUrl<small>(path)</small></var> {#previewseturl}
 
-_Since 1.7.0. Experimental: exact behavior may change._
+_С версии 1.7.0. Экспериментально: точное поведение может измениться._
 
-Changes the path of the preview URL. Returns a promise resolving to `null`.
+Изменяет путь URL-адреса предварительного просмотра. Возвращает обещание, разрешающееся в `null`.
 
 | Argument | Required | Type   | Description                   |
 | -------- | -------- | ------ | ----------------------------- |
-| `path`   | Yes      | String | A URL path starting with `/`. |
+| `path`   | Yes      | String | Путь URL, начинающийся с `/`. |
 
-The provided path must start with `/` and cannot change the origin of the preview URL.
+Предоставленный путь должен начинаться с `/` и не может изменить источник URL-адреса предварительного просмотра.
 
-In WebContainers projects, calls to `vm.preview.setUrl` will be ignored if there is no web server running currently.
+В проектах WebContainers вызовы vm.preview.setUrl будут игнорироваться, если в данный момент веб-сервер не запущен.
 
-Example:
+Пример:
 
 ```js
-// Navigates to the About page
+// Переходит на страницу «О программе»
 await vm.preview.setUrl('/about');
 ```
 
